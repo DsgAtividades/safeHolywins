@@ -23,8 +23,8 @@ try {
     function gerarCartaoUnico($conn) {
         do {
             $numeros = gerarNumeroAleatorio();
-            $codigo = 'PSJ' .implode('', $numeros);
-            $hashCode = 'PSJ' .md5($codigo);
+            $codigo = 'HOL' .implode('', $numeros);
+            $hashCode = 'HOL' .md5($codigo);
             $stmt = $conn->prepare("SELECT COUNT(*) FROM cartoes WHERE codigo = ?");
             $stmt->execute([$hashCode]);
             $existe = $stmt->fetchColumn() > 0;
