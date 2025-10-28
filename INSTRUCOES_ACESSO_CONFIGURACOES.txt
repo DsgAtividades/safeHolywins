@@ -1,0 +1,126 @@
+================================================================================
+🔓 COMO ACESSAR A PÁGINA DE CONFIGURAÇÕES DO SISTEMA
+================================================================================
+
+✅ O QUE FOI FEITO:
+
+1. ✅ Página "Configurações do Sistema" adicionada ao menu
+2. ✅ Menu aparece na seção Administrativa (após Permissões)
+3. ✅ Scripts criados para adicionar permissão no banco de dados
+
+================================================================================
+⚡ SOLUÇÃO RÁPIDA (SIGA ESTES PASSOS):
+================================================================================
+
+PASSO 1: Adicionar a Permissão
+------------------------------
+Acesse no navegador:
+http://localhost/hol/database/adicionar_permissao_configuracoes.php
+
+Isso vai criar a permissão e adicionar ao grupo Administrador automaticamente.
+
+PASSO 2: Fazer Logout e Login
+------------------------------
+IMPORTANTE! Faça logout do sistema e faça login novamente para as permissões
+serem atualizadas.
+
+PASSO 3: Verificar o Menu
+--------------------------
+Olhe no menu lateral, na seção administrativa, você deve ver:
+
+    👥 Usuários
+    📊 Grupos  
+    🔒 Permissões
+    ⚙️ Configurações do Sistema  ← NOVO!
+
+PASSO 4: Acessar a Página
+--------------------------
+Clique em "Configurações do Sistema" ou acesse diretamente:
+http://localhost/hol/configuracoes_sistema.php
+
+================================================================================
+📁 ARQUIVOS CRIADOS/MODIFICADOS:
+================================================================================
+
+✅ includes/header.php (MODIFICADO)
+   → Adicionado item "Configurações do Sistema" no menu
+
+✅ database/adicionar_permissao_configuracoes.php (NOVO)
+   → Script automático para criar a permissão
+
+✅ database/adicionar_permissao_configuracoes.sql (NOVO)
+   → Script SQL para criar a permissão manualmente
+
+✅ SOLUCIONAR_ACESSO_CONFIGURACOES.md (NOVO)
+   → Documentação completa de solução de problemas
+
+================================================================================
+🎯 LOCALIZAÇÃO NO MENU:
+================================================================================
+
+O item aparecerá assim no menu lateral:
+
+┌─────────────────────────────────────┐
+│                                     │
+│  🏠 Início                          │
+│  📊 Dashboard                       │
+│  📱 Vendas                          │
+│  👥 Pessoas                         │
+│  📦 Produtos                        │
+│  ...                                │
+│                                     │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━      │
+│  SEÇÃO ADMINISTRATIVA:              │
+│                                     │
+│  👥 Usuários                        │
+│  📊 Grupos                          │
+│  🔒 Permissões                      │
+│  ⚙️ Configurações do Sistema  ← AQUI │
+│                                     │
+└─────────────────────────────────────┘
+
+================================================================================
+❓ PROBLEMAS?
+================================================================================
+
+Se não aparecer no menu:
+-------------------------
+1. Execute: http://localhost/hol/database/adicionar_permissao_configuracoes.php
+2. Faça LOGOUT
+3. Faça LOGIN novamente
+4. Limpe o cache (Ctrl + F5)
+
+Se der "Acesso Negado":
+-----------------------
+1. Verifique se você é Administrador
+2. Execute o script de permissão novamente
+3. Faça logout e login
+
+================================================================================
+✨ PRONTO PARA USAR!
+================================================================================
+
+Após seguir os passos acima, você poderá:
+✅ Acessar "Configurações do Sistema" pelo menu
+✅ Configurar CPF/Nome como opcional ou obrigatório
+✅ Definir o custo dos cartões
+✅ Gerenciar configurações do sistema
+
+================================================================================
+📚 DOCUMENTAÇÃO:
+================================================================================
+
+→ README_CONFIGURACAO_CARTAO.md
+  Como usar as configurações de cartões
+
+→ GUIA_RAPIDO_CONFIGURACAO_CARTAO.md  
+  Guia rápido de uso
+
+→ SOLUCIONAR_ACESSO_CONFIGURACOES.md
+  Solução completa de problemas de acesso
+
+================================================================================
+Data: 20/10/2025
+Status: ✅ Implementado e Testado
+================================================================================
+
