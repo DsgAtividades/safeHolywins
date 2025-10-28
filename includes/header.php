@@ -96,7 +96,57 @@ verificarLogin();
             cursor: pointer;
         }
         
-        @media (min-width: 750px) {
+        /* Botão menu - sempre visível */
+        #btn-menu {
+            display: block;
+            width: 45px;
+            height: 40px;
+            border: 1px solid #FFFFFF;
+            border-radius: 6px;
+            background-color: rgb(13, 110, 253);
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Navbar brand - título menor */
+        .navbar-brand {
+            font-size: 1.1rem !important;
+            font-weight: 600;
+            padding: 0.4rem 0;
+        }
+
+        @media (min-width: 992px) {
+            #sidebar {
+                width: var(--sidebar-width);
+                position: fixed;
+                top: 56px;
+                bottom: 0;
+                left: 0;
+                z-index: 1000;
+                background-color: #f8f9fa;
+                overflow-y: auto;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+                padding-top: 1rem;
+            }
+
+            #sidebar.active {
+                left: 0;
+            }
+
+            .navbar-toggler {
+                display: none;
+            }
+            
+            .content {
+                margin-left: var(--sidebar-width);
+            }
+        }
+
+        @media (min-width: 750px) and (max-width: 991px) {
             #sidebar {
                 width: var(--sidebar-width);
                 position: fixed;
@@ -107,33 +157,27 @@ verificarLogin();
                 background-color: #f8f9fa;
                 overflow-y: auto;
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+                padding-top: 1rem;
             }
-        
 
             #sidebar.active {
                 left: 0;
             }
 
-            .overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-            }
-            #btn-menu{
-                display:none;
-            }
-
-            .navbar-toggler {
-                display: none;
-            }
             .content {
-                margin-left: var(--sidebar-width);
+                margin-left: 0;
             }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
 
         .overlay.active {
@@ -143,8 +187,7 @@ verificarLogin();
         .content {
             padding: 20px;
             transition: 0.3s;
-            left: 250px
-            }
+        }
 
         
 
@@ -166,19 +209,11 @@ verificarLogin();
                 left: -var(--sidebar-width);
                 z-index: 1000;
                 background-color: #f8f9fa;
+                padding-top: 1rem;
             }
 
             .container.active {
                 display:none;
-            }
-            
-            #btn-menu{
-                width: 40px;
-                height: 35px;
-                border: 1px solid #FFFFFF;
-                border-radius: 5px;
-                background-color: rgb(13, 110, 253);
-                cursor: pointer;
             }
 
             button.active .linha:nth-child(1){
@@ -192,14 +227,15 @@ verificarLogin();
             }
 
             .linha {
-                width: 20px;
-                height: 1px;
+                width: 24px;
+                height: 2px;
                 background-color: #FFFFFF;
                 display: block;
-                margin: 6px auto;
+                margin: 3px auto;
                 position: relative;
                 transform-origin: center;
                 transition: 0.2s;
+                border-radius: 1px;
             }
             #back{
                 position: fixed;
@@ -219,11 +255,6 @@ verificarLogin();
                 height: 100%;
                 display: block;
             }
-            
-        }
-        .overlay {
-            display: none !important;
-            position: fixed;
         }
 
         .nav-divider {
@@ -232,9 +263,13 @@ verificarLogin();
             margin: 0.5rem 1rem;
         }
 
+        .list-group-flush {
+            padding-top: 0.5rem;
+        }
+
         .list-group-item {
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1rem;
         }
 
         .list-group-item:hover {
@@ -253,32 +288,23 @@ verificarLogin();
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Sistema Festa Junina</a>
-            <div class="d-flex align-items-center">
-                <a href="logout.php" class="btn btn-outline-light btn-sm me-2 d-lg-none">
-                    <i class="bi bi-box-arrow-right"></i>
-                </a>
-                <button id='btn-menu' type="button" onclick="animar()">
+            <div class="d-flex align-items-center w-100">
+                <!-- Botão Menu (Hambúrguer) - Apenas Mobile -->
+                <button id='btn-menu' type="button" class="me-3 d-lg-none">
                     <span class="linha"></span>
                     <span class="linha"></span>
                     <span class="linha"></span>
                 </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <div class="user-menu" id="userMenu">
-                            <i class="bi bi-person-circle"></i>
-                            <span><?= escapar($_SESSION['usuario_nome'] ?? 'Usuário') ?></span>
-                            <i class="bi bi-chevron-down ms-1"></i>
-                        </div>
-                        <div class="user-menu-dropdown" id="userMenuDropdown">
-                            <a href="logout.php">
-                                <i class="bi bi-box-arrow-right"></i> Sair do Sistema
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+                
+                <!-- Título sem emoji -->
+                <a class="navbar-brand mb-0 flex-grow-1 text-truncate" href="index.php" style="max-width: 60%;">
+                    Sistema Festa Junina
+                </a>
+                
+                <!-- Botão Logout - Canto superior direito -->
+                <a href="logout.php" class="btn btn-outline-light btn-sm ms-auto" style="white-space: nowrap;">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </a>
             </div>
         </div>
     </nav>
@@ -404,37 +430,29 @@ verificarLogin();
     <?php mostrarAlerta(); ?>
         
     <script>
-        // Toggle sidebar on mobile
+        // Toggle sidebar
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-        }
-        function animar(){
-            window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-            });
-            document.getElementById('btn-menu').classList.toggle('active');
-            document.getElementById('back').classList.toggle('active');
-        }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const userMenu = document.getElementById('userMenu');
-            const userMenuDropdown = document.getElementById('userMenuDropdown');
-
-            if (userMenu && userMenuDropdown) {
-                userMenu.addEventListener('click', function(e) {
-                    userMenuDropdown.classList.toggle('show');
-                });
-
-                // Fechar o menu quando clicar fora
-                document.addEventListener('click', function(e) {
-                    if (!userMenu.contains(e.target)) {
-                        userMenuDropdown.classList.remove('show');
-                    }
-                });
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.overlay');
+            const btnMenu = document.getElementById('btn-menu');
+            
+            sidebar.classList.toggle('active');
+            btnMenu.classList.toggle('active');
+            
+            if (sidebar.classList.contains('active')) {
+                overlay.classList.add('active');
+            } else {
+                overlay.classList.remove('active');
             }
+        }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Event listener para o botão menu
+            document.querySelector('#btn-menu').addEventListener('click', toggleSidebar);
+            
+            // Fechar sidebar quando clicar no overlay
+            document.querySelector('.overlay').addEventListener('click', toggleSidebar);
+            
             // Marcar item do menu ativo automaticamente
             const currentPage = window.location.pathname.split('/').pop() || 'index.php';
             const menuItems = document.querySelectorAll('#sidebar .list-group-item');
@@ -446,7 +464,6 @@ verificarLogin();
                 }
             });
         });
-        document.querySelector('#btn-menu').addEventListener('click', toggleSidebar);
-        </script>
+    </script>
 </body>
 </html>

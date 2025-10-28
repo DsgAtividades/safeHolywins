@@ -99,11 +99,6 @@ body {
     color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.navbar-brand::before {
-    content: "🎉";
-    font-size: 1.8rem;
-}
-
 /* Menu de Usuário */
 .user-menu {
     background: rgba(255, 255, 255, 0.1);
@@ -772,18 +767,26 @@ body {
     border-top-left-radius: var(--border-radius-lg);
     border-top-right-radius: var(--border-radius-lg);
     padding: 1.5rem;
+    color: white !important;
 }
 
-.modal-title {
+.modal-header .modal-title {
+    color: white !important;
     font-weight: 600;
     letter-spacing: 0.3px;
 }
 
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
 .modal-body {
     padding: 2rem;
+    background-color: white;
 }
 
 .modal-footer {
+    background-color: white;
     border-top: 1px solid var(--border-color);
     padding: 1.25rem 2rem;
 }
