@@ -41,20 +41,11 @@ include 'includes/header.php';
 ?>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-clock-history"></i> Histórico de Transações
-                    </h6>
-                    <a href="saldos.php" class="btn btn-primary btn-sm">
-                        <i class="bi bi-arrow-left"></i> Voltar para Saldos
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Histórico de Transações</h1>
+        <a href="saldos.php" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Voltar para Saldos
+        </a>
     </div>
 
     <!-- Filtros -->

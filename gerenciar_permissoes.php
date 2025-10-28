@@ -72,34 +72,25 @@ include 'includes/header.php';
 </head>
 <body>
     <div class="container mt-4">
-        <!-- Título da Página -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card shadow">
-                    <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                        <h6 class="m-0 font-weight-bold text-primary">
-                            <i class="bi bi-shield-lock"></i> Gerenciar Permissões
-                        </h6>
-                        <div>
-                            <a href="index.php" class="btn btn-secondary btn-sm me-2">
-                                <i class="bi bi-arrow-left"></i> Voltar
-                            </a>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#novaPermissao">
-                                <i class="bi bi-plus-lg"></i> Nova Permissão
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2>Gerenciar Permissões</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Início</a></li>
+                        <li class="breadcrumb-item active">Gerenciar Permissões</li>
+                    </ol>
+                </nav>
+            </div>
+            <div>
+                <a href="index.php" class="btn btn-secondary me-2">
+                    <i class="bi bi-arrow-left"></i> Voltar
+                </a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#novaPermissao">
+                    <i class="bi bi-plus-lg"></i> Nova Permissão
+                </button>
             </div>
         </div>
-        
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="mb-3">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Início</a></li>
-                <li class="breadcrumb-item active">Gerenciar Permissões</li>
-            </ol>
-        </nav>
 
         <?php mostrarAlerta(); ?>
 

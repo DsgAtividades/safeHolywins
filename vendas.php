@@ -96,21 +96,12 @@ include 'includes/header.php';
 ?>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <div class="container py-3">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-cart-check"></i> Vendas
-                    </h6>
-                    <a href="vendas_novo.php" class="btn btn-success btn-sm">
-                        <i class="bi bi-plus-lg"></i> Nova Venda
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h4 mb-0">Vendas</h1>
+        <a href="vendas_novo.php" class="btn btn-success">
+            <i class="bi bi-plus-lg"></i> Nova Venda
+        </a>
+    </div> -->
 
     <!-- Filtros -->
     <div class="card mb-4">

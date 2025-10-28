@@ -54,19 +54,7 @@ $resultados = $stmt->fetchAll();
 include 'includes/header.php';
 ?>
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-bar-chart-line"></i> Relatório de Vendas por Barraca
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <h1>Relatório de Vendas por Barraca:</h1><br>
     <form class="row g-3 mb-4" method="post">
         <div class="col-md-3">
             <label for="data_inicial" class="form-label">Data Inicial:</label>
@@ -126,7 +114,7 @@ include 'includes/header.php';
 </div>
 <!-- Modal Produtos -->
 <div class="modal fade" id="produtosModal" tabindex="-1" aria-labelledby="produtosModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="produtosModalLabel">Produtos da Categoria</h5>

@@ -58,17 +58,8 @@ if ($qrcode) {
 </head>
 <body>
     <div class="container py-4">
-        <!-- Título da Página -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card shadow">
-                    <div class="card-header py-3 text-center">
-                        <h6 class="m-0 font-weight-bold text-primary">
-                            <i class="bi bi-search"></i> Consulta de Saldo
-                        </h6>
-                    </div>
-                </div>
-            </div>
+        <div class="d-flex justify-content-center align-items-center mb-4">
+            <h1>Consulta de Saldo</h1>
         </div>
 
         <div class="card mb-4">

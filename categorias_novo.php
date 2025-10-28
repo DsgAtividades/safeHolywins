@@ -39,20 +39,11 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-plus-circle"></i> Nova Categoria
-                    </h6>
-                    <a href="categorias.php" class="btn btn-outline-secondary btn-sm">
-                        <i class="bi bi-arrow-left"></i> Voltar
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 mb-0">Nova Categoria</h1>
+        <a href="categorias.php" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
     </div>
 
     <?php if (isset($erro)): ?>

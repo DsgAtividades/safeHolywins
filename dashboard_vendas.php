@@ -40,19 +40,6 @@ require_once 'includes/header.php';
 ?>
 
 <div class="container">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-graph-up-arrow"></i> Dashboard Vendas
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Cabeçalho com Filtros -->
     <div class="row mb-4">
         <div class="col-12">
@@ -207,7 +194,6 @@ require_once 'includes/header.php';
                             <th>Produto</th>
                             <th>Categoria</th>
                             <th>Estoque Atual</th>
-                            <th>Valor a Vender</th>
                             <th>Qtd. Vendida</th>
                             <th>Valor Vendido</th>
                             <th>% do Total</th>
@@ -335,9 +321,6 @@ function atualizarDados() {
                         <span class="badge bg-${produto.estoque > 10 ? 'success' : 'danger'}">
                             ${produto.estoque}
                         </span>
-                    </td>
-                    <td>
-                        <strong class="text-success">${formatMoney(produto.valor_a_vender || 0)}</strong>
                     </td>
                     <td>${produto.quantidade_vendida}</td>
                     <td>${formatMoney(produto.valor_vendido)}</td>

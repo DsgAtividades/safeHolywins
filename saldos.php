@@ -23,24 +23,15 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-wallet2"></i> Gestão de Saldos
-                    </h6>
-                    <div>
-                        <button type="button" class="btn btn-success btn-sm me-2" onclick="abrirLeitorQR()">
-                            <i class="bi bi-qr-code-scan"></i> Ler QR Code
-                        </button>
-                        <a href="saldos_historico.php" class="btn btn-info btn-sm text-white">
-                            <i class="bi bi-clock-history"></i> Histórico
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 mb-0">Gestão de Saldos</h1>
+        <div>
+            <button type="button" class="btn btn-success me-2" onclick="abrirLeitorQR()">
+                <i class="bi bi-qr-code-scan"></i> Ler QR Code
+            </button>
+            <a href="saldos_historico.php" class="btn btn-info text-white">
+                <i class="bi bi-clock-history"></i> Histórico
+            </a>
         </div>
     </div>
 

@@ -39,23 +39,17 @@ include 'includes/header.php';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-people"></i> Pessoas Cadastradas
-                    </h6>
-                    <div>
-                        <?php if(temPermissao('pessoas_incluir')): ?>
-                        <a href="alocar_cartao_mobile.php" class="btn btn-primary btn-sm">
-                            <i class="bi bi-person-plus"></i> Novo Cadastro
-                        </a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Pessoas Cadastradas</h1>
+        <div>
+            <!-- <a href="gerar_cartoes.php" class="btn btn-success me-2">
+                <i class="bi bi-upc-scan"></i> Gerar Cartões
+            </a> -->
+            <?php if(temPermissao('pessoas_incluir')): ?>
+            <a href="alocar_cartao_mobile.php" class="btn btn-primary">
+                <i class="bi bi-person-plus"></i> Novo Cadastro
+            </a>
+            <?php endif; ?>
         </div>
     </div>
 

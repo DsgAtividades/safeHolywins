@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Validar dados
         $nome = trim($_POST['nome']);
         $preco = str_replace(',', '.', $_POST['preco']);
-        $preco_custo = !empty($_POST['preco_custo']) ? str_replace(',', '.', $_POST['preco_custo']) : null;
         $estoque = (int)$_POST['estoque'];
         $categoria_id = (int)$_POST['categoria_id'];
         
@@ -38,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         
         // Inserir produto
-        $stmt = $pdo->prepare("INSERT INTO produtos (nome_produto, categoria_id, preco_custo, preco, estoque) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$nome, $categoria_id, $preco_custo, $preco, $estoque]);
+        $stmt = $pdo->prepare("INSERT INTO produtos (nome_produto, categoria_id, preco, estoque) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$nome, $categoria_id, $preco, $estoque]);
         
         header("Location: produtos.php?success=created");
         exit;
@@ -53,20 +52,11 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-plus-circle"></i> Novo Produto
-                    </h6>
-                    <a href="produtos.php" class="btn btn-outline-secondary btn-sm">
-                        <i class="bi bi-arrow-left"></i> Voltar
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 mb-0">Novo Produto</h1>
+        <a href="produtos.php" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
     </div>
 
     <?php if ($error): ?>
@@ -106,16 +96,7 @@ include 'includes/header.php';
                     </div>
 
                     <div class="col-md-3 mb-3">
-                        <label for="preco_custo" class="form-label">Preço de Custo <small class="text-muted">(opcional)</small></label>
-                        <div class="input-group">
-                            <span class="input-group-text">R$</span>
-                            <input type="text" class="form-control" id="preco_custo" name="preco_custo"
-                                   value="<?= isset($_POST['preco_custo']) ? htmlspecialchars($_POST['preco_custo']) : '0,00' ?>">
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label for="preco" class="form-label">Preço de Venda</label>
+                        <label for="preco" class="form-label">Preço</label>
                         <div class="input-group">
                             <span class="input-group-text">R$</span>
                             <input type="text" class="form-control" id="preco" name="preco" required
@@ -149,13 +130,6 @@ include 'includes/header.php';
 </div>
 
 <script>
-// Formatar campo de preço de custo
-document.getElementById('preco_custo').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, '');
-    value = (parseInt(value || '0') / 100).toFixed(2);
-    e.target.value = value.replace('.', ',');
-});
-
 // Formatar campo de preço
 document.getElementById('preco').addEventListener('input', function (e) {
     let value = e.target.value.replace(/\D/g, '');

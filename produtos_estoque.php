@@ -92,20 +92,11 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-3">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-box-arrow-in-right"></i> Ajuste de Estoque - <?= htmlspecialchars($produto['nome_produto']) ?>
-                    </h6>
-                    <a href="produtos.php" class="btn btn-secondary btn-sm">
-                        <i class="bi bi-arrow-left"></i> Voltar
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h4 mb-0">Ajuste de Estoque - <?= htmlspecialchars($produto['nome_produto']) ?></h1>
+        <a href="produtos.php" class="btn btn-secondary btn-sm">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
     </div>
 
     <?php if (isset($_GET['success'])): ?>

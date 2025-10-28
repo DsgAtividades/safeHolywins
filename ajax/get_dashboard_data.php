@@ -129,8 +129,6 @@ $query = "
         p.nome_produto,
         c.nome as categoria,
         p.estoque,
-        p.preco as valor_unitario,
-        (p.estoque * p.preco) as valor_a_vender,
         SUM(vi.quantidade) as quantidade_vendida,
         SUM(vi.quantidade * vi.valor_unitario) as valor_vendido,
         ROUND((SUM(vi.quantidade * vi.valor_unitario) / (
@@ -140,7 +138,7 @@ $query = "
             WHERE v2.estornada is null and date(v2.data_venda) BETWEEN :data_inicio AND :data_fim
         )) * 100, 1) as percentual
     " . $query_base . "
-    GROUP BY p.id, p.nome_produto, c.nome, p.estoque, p.preco
+    GROUP BY p.id, p.nome_produto, c.nome, p.estoque
     ORDER BY valor_vendido DESC LIMIT 20
 ";
 

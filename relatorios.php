@@ -90,21 +90,12 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-file-earmark-text"></i> Relatórios
-                    </h6>
-                    <div class="btn-group">
-                        <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
-                            <i class="bi bi-printer"></i> Imprimir
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 mb-0">Relatórios</h1>
+        <div class="btn-group">
+            <button class="btn btn-outline-primary" onclick="window.print()">
+                <i class="bi bi-printer"></i> Imprimir
+            </button>
         </div>
     </div>
 

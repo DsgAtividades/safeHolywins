@@ -15,11 +15,15 @@ verificarLogin();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- QR Code library -->
     <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/dist/html5-qrcode.min.js"></script>
+    <!-- CSS Premium Customizado -->
+    <link href="assets/css/sistema-premium.css" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Custom CSS -->
     <style>
         :root {
@@ -249,7 +253,7 @@ verificarLogin();
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Festa Junina</a>
+            <a class="navbar-brand" href="index.php">Sistema Festa Junina</a>
             <div class="d-flex align-items-center">
                 <a href="logout.php" class="btn btn-outline-light btn-sm me-2 d-lg-none">
                     <i class="bi bi-box-arrow-right"></i>
@@ -266,7 +270,7 @@ verificarLogin();
                         <div class="user-menu" id="userMenu">
                             <i class="bi bi-person-circle"></i>
                             <span><?= escapar($_SESSION['usuario_nome'] ?? 'Usuário') ?></span>
-                            <i class="bi bi-chevron-down"></i>
+                            <i class="bi bi-chevron-down ms-1"></i>
                         </div>
                         <div class="user-menu-dropdown" id="userMenuDropdown">
                             <a href="logout.php">
@@ -430,6 +434,17 @@ verificarLogin();
                     }
                 });
             }
+
+            // Marcar item do menu ativo automaticamente
+            const currentPage = window.location.pathname.split('/').pop() || 'index.php';
+            const menuItems = document.querySelectorAll('#sidebar .list-group-item');
+            
+            menuItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href === currentPage) {
+                    item.classList.add('active');
+                }
+            });
         });
         document.querySelector('#btn-menu').addEventListener('click', toggleSidebar);
         </script>

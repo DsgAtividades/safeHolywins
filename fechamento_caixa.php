@@ -48,20 +48,11 @@ if($data_inicio != $data_fim){
 include 'includes/header.php';
 ?>
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-calculator"></i> Fechamento de Caixa
-                    </h6>
-                    <a href="saldos.php" class="btn btn-primary btn-sm">
-                        <i class="bi bi-arrow-left"></i> Voltar
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Fechamento de Caixa</h1>
+        <a href="saldos.php" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
     </div>
     <div class="card mb-4">
         <div class="card-body">

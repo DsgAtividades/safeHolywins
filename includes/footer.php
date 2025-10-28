@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- QR Code Generator -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <!-- Sistema de Melhorias -->
+    <script src="assets/js/sistema-melhorias.js"></script>
     
     <script>
     // Função para mostrar alertas bonitos

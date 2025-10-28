@@ -67,11 +67,9 @@ include 'includes/header.php';
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card shadow">
-                    <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                        <h6 class="m-0 font-weight-bold text-primary">
-                            <i class="bi bi-key"></i> Permissões do Grupo: <?= escapar($grupo['nome']) ?>
-                        </h6>
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Permissões do Grupo: <?= escapar($grupo['nome']) ?></h4>
                         <a href="gerenciar_grupos.php" class="btn btn-secondary btn-sm">
                             <i class="bi bi-arrow-left"></i> Voltar
                         </a>

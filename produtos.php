@@ -58,22 +58,13 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-box-seam"></i> Produtos
-                    </h6>
-                    <?php if(temPermissao('produtos_incluir')): ?>
-                    <a href="produtos_novo.php" class="btn btn-primary btn-sm">
-                        <i class="bi bi-plus-circle"></i> Novo Produto
-                    </a>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Produtos</h1>
+        <?php if(temPermissao('produtos_incluir')): ?>
+        <a href="produtos_novo.php" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Novo Produto
+        </a>
+        <?php endif; ?>
     </div>
     
     <?php if (isset($_GET['success'])): ?>
@@ -129,56 +120,19 @@ include 'includes/header.php';
                 <tr>
                     <th>Nome</th>
                     <th>Categoria</th>
-                    <th>Preço Custo</th>
-                    <th>Preço Venda</th>
-                    <th>Lucro</th>
+                    <th>Preço</th>
                     <th>Estoque</th>
-                    <th>Valor Estoque</th>
                     <th>Status</th>
                     <th width="150">Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($produtos as $produto): ?>
-                    <?php 
-                    // Calcular lucro
-                    $lucro_valor = 0;
-                    $lucro_percentual = 0;
-                    if ($produto['preco_custo'] > 0) {
-                        $lucro_valor = $produto['preco'] - $produto['preco_custo'];
-                        $lucro_percentual = ($lucro_valor / $produto['preco_custo']) * 100;
-                    }
-                    
-                    // Calcular valor do estoque (preço de venda x estoque)
-                    $valor_estoque = $produto['preco'] * $produto['estoque'];
-                    ?>
                     <tr>
                         <td><?= htmlspecialchars($produto['nome_produto']) ?></td>
                         <td><?= htmlspecialchars($produto['categoria_nome'] ?? 'Sem categoria') ?></td>
-                        <td>
-                            <?php if ($produto['preco_custo'] > 0): ?>
-                                R$ <?= number_format($produto['preco_custo'], 2, ',', '.') ?>
-                            <?php else: ?>
-                                <span class="text-muted">-</span>
-                            <?php endif; ?>
-                        </td>
                         <td>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></td>
-                        <td>
-                            <?php if ($produto['preco_custo'] > 0): ?>
-                                <span class="<?= $lucro_valor >= 0 ? 'text-success' : 'text-danger' ?>">
-                                    R$ <?= number_format($lucro_valor, 2, ',', '.') ?>
-                                    <small>(<?= number_format($lucro_percentual, 1) ?>%)</small>
-                                </span>
-                            <?php else: ?>
-                                <span class="text-muted">-</span>
-                            <?php endif; ?>
-                        </td>
                         <td><?= $produto['estoque'] ?></td>
-                        <td>
-                            <span class="text-primary">
-                                R$ <?= number_format($valor_estoque, 2, ',', '.') ?>
-                            </span>
-                        </td>
                         <td>
                             <?php if ($produto['bloqueado']): ?>
                                 <span class="badge bg-danger">Bloqueado</span>

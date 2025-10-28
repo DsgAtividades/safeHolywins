@@ -5,7 +5,7 @@ require_once 'includes/funcoes.php';
 
 verificarLogin();
 verificarPermissao('gerenciar_cartoes');
-$fixo_cartao = 000;
+$fixo_cartao = 0.00;
 $mensagem = '';
 $tipo_mensagem = '';
 

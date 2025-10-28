@@ -49,24 +49,15 @@ include 'includes/header.php';
 ?>
 
 <div class="container py-4">
-    <!-- Título da Página -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow">
-                <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                        <i class="bi bi-tags"></i> Categorias
-                    </h6>
-                    <div>
-                        <a href="produtos.php" class="btn btn-outline-secondary btn-sm me-2">
-                            <i class="bi bi-box-seam"></i> Produtos
-                        </a>
-                        <a href="categorias_novo.php" class="btn btn-primary btn-sm">
-                            <i class="bi bi-plus-lg"></i> Nova Categoria
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-4">
+        <h1 class="h2 mb-0">Categorias</h1>
+        <div>
+            <a href="produtos.php" class="btn btn-outline-secondary me-2">
+                <i class="bi bi-box-seam"></i> Produtos
+            </a>
+            <a href="categorias_novo.php" class="btn btn-primary">
+                <i class="bi bi-plus-lg"></i> Nova Categoria
+            </a>
         </div>
     </div>
 
