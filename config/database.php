@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = 'localhost';
-    private $db_name = 'paroquia';
-    private $username = 'root';
-    private $password = '';
+    private $host = 'holywins.mysql.dbaas.com.br';
+    private $db_name = 'holywins';
+    private $username = 'holywins';
+    private $password = 'Holywins@2025';
     private $conn;
 
     public function getConnection() {

@@ -9,7 +9,7 @@ function verificarLogin() {
             'tipo' => 'warning',
             'mensagem' => 'Por favor, faça login para continuar.'
         ];
-        header("Location: /paroquia/login.php");
+        header("Location: /holywins/login.php");
         exit;
     }
 }
@@ -36,7 +36,7 @@ function verificarPermissao($permissaoNecessaria) {
                     'tipo' => 'danger',
                     'mensagem' => 'Você não tem permissão para acessar esta página.'
                 ];
-                header("Location: /paroquia/index.php");
+                header("Location: /holywins/index.php");
                 //return $resultado['tem_permissao'];
             }
         } catch(PDOException $e) {
@@ -47,7 +47,7 @@ function verificarPermissao($permissaoNecessaria) {
             'tipo' => 'warning',
             'mensagem' => 'Por favor, faça login para continuar.'
         ];
-        header("Location: /paroquia/index.php");
+        header("Location: /holywins/index.php");
         exit;
     }
     

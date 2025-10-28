@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = 'dbjuninapspa.mysql.dbaas.com.br';
-    private $db_name = 'dbjuninapspa';
-    private $username = 'dbjuninapspa';
-    private $password = 'NJFEFkEp825j@#';
+    private $host = 'holywins.mysql.dbaas.com.br';
+    private $db_name = 'holywins';
+    private $username = 'holywins';
+    private $password = 'Holywins@2025';
     private $conn;
 
     public function getConnection() {
