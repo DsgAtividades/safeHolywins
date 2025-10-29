@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exibirAlerta("Este email já está cadastrado", "danger");
             } else {
                 $stmt = $pdo->prepare("
-                    INSERT INTO usuarios (nome, email, senha, grupo_id, ativo)
-                    VALUES (?, ?, ?, ?, ?)
+                    INSERT INTO usuarios (nome, email, senha, grupo_id, ativo, primeiro_login)
+                    VALUES (?, ?, ?, ?, ?, 1)
                 ");
                 $stmt->execute([
                     $nome,
