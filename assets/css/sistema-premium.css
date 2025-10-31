@@ -813,7 +813,81 @@ body {
 .modal .container-fluid:hover {
     box-shadow: none !important;
     transform: none !important;
+    opacity: 1 !important;
+    background-color: inherit !important;
+}
+
+/* Sobrescrever QUALQUER regra global de hover/transparência dentro do modal */
+.modal-content,
+.modal-content div,
+.modal-content form,
+.modal-content .form-control,
+.modal-content .input-group,
+.modal-content .btn {
+    opacity: 1 !important;
+}
+
+.modal-content:hover,
+.modal-content div:hover,
+.modal-content form:hover,
+.modal-content .form-control:hover,
+.modal-content .input-group:hover,
+.modal-content .btn:hover,
+.modal-content:focus,
+.modal-content div:focus,
+.modal-content form:focus,
+.modal-content .form-control:focus,
+.modal-content .input-group:focus,
+.modal-content .btn:focus,
+.modal-content:active,
+.modal-content div:active,
+.modal-content form:active,
+.modal-content .form-control:active,
+.modal-content .input-group:active,
+.modal-content .btn:active {
+    opacity: 1 !important;
+    background-color: inherit !important;
+}
+
+/* Garantir que o modal-content nunca fique transparente */
+.modal-content,
+.modal-content:hover,
+.modal-content:focus,
+.modal-content:active {
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+/* Garantir que inputs e botões não fiquem transparentes no mobile */
+.modal input:focus,
+.modal input:active,
+.modal button:focus,
+.modal button:active,
+.modal button:hover,
+.modal select:focus,
+.modal select:active {
     background-color: transparent !important;
+    opacity: 1 !important;
+}
+
+.modal .form-control:focus,
+.modal .form-control:active {
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+.modal .btn-primary:focus,
+.modal .btn-primary:active,
+.modal .btn-primary:hover {
+    background-color: #0d6efd !important;
+    opacity: 1 !important;
+}
+
+.modal .btn-secondary:focus,
+.modal .btn-secondary:active,
+.modal .btn-secondary:hover {
+    background-color: #6c757d !important;
+    opacity: 1 !important;
 }
 
 /* Remover hover de elementos dentro de modais */
@@ -1924,6 +1998,21 @@ fieldset:hover {
     box-shadow: none !important;
     transform: none !important;
     filter: none !important;
+}
+
+/* EXCEÇÃO: Modal e seus elementos NUNCA podem ficar transparentes */
+.modal div:hover,
+.modal form:hover,
+.modal fieldset:hover,
+.modal-content div:hover,
+.modal-content form:hover,
+.modal-content fieldset:hover,
+#modalCredito div:hover,
+#modalCredito form:hover,
+#modalDebito div:hover,
+#modalDebito form:hover {
+    opacity: 1 !important;
+    background-color: inherit !important;
 }
 
 /* ==================================================================== 

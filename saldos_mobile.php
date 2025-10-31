@@ -29,6 +29,117 @@ include 'includes/header.php';
     .hidden {
         display: none;
     }
+
+    /* Garantir que o modal nunca fique transparente no mobile */
+    .modal-content {
+        background-color: white !important;
+        opacity: 1 !important;
+    }
+
+    .modal-header {
+        background-color: #0d6efd !important;
+        opacity: 1 !important;
+    }
+
+    .modal-body {
+        background-color: white !important;
+        opacity: 1 !important;
+    }
+
+    .modal-footer {
+        background-color: white !important;
+        opacity: 1 !important;
+    }
+
+    /* Garantir que inputs e botões não fiquem transparentes */
+    .modal input,
+    .modal input:focus,
+    .modal input:active,
+    .modal input:hover {
+        background-color: white !important;
+        opacity: 1 !important;
+    }
+
+    .modal select,
+    .modal select:focus,
+    .modal select:active,
+    .modal select:hover {
+        background-color: white !important;
+        opacity: 1 !important;
+    }
+
+    .modal .btn-primary,
+    .modal .btn-primary:focus,
+    .modal .btn-primary:active,
+    .modal .btn-primary:hover {
+        background-color: #0d6efd !important;
+        opacity: 1 !important;
+    }
+
+    .modal .btn-secondary,
+    .modal .btn-secondary:focus,
+    .modal .btn-secondary:active,
+    .modal .btn-secondary:hover {
+        background-color: #6c757d !important;
+        opacity: 1 !important;
+    }
+
+    /* Desabilitar qualquer efeito que possa causar transparência */
+    .modal *,
+    .modal *::before,
+    .modal *::after {
+        opacity: 1 !important;
+    }
+
+    .modal *:hover,
+    .modal *:focus,
+    .modal *:active,
+    .modal *:hover *,
+    .modal *:focus *,
+    .modal *:active * {
+        opacity: 1 !important;
+        background-color: inherit !important;
+    }
+
+    /* Específico para input-group que pode estar causando o problema */
+    .modal .input-group,
+    .modal .input-group:hover,
+    .modal .input-group:focus,
+    .modal .input-group:active {
+        background-color: transparent !important;
+        opacity: 1 !important;
+    }
+
+    .modal .input-group-text,
+    .modal .input-group-text:hover,
+    .modal .input-group-text:focus,
+    .modal .input-group-text:active {
+        background-color: #e9ecef !important;
+        opacity: 1 !important;
+    }
+
+    /* Garantir que o modal-content e seus filhos nunca fiquem transparentes */
+    #modalCredito .modal-content,
+    #modalCredito .modal-content *,
+    #modalCredito .modal-content:hover,
+    #modalCredito .modal-content *:hover,
+    #modalCredito .modal-content:focus,
+    #modalCredito .modal-content *:focus,
+    #modalCredito .modal-content:active,
+    #modalCredito .modal-content *:active {
+        opacity: 1 !important;
+    }
+
+    #modalDebito .modal-content,
+    #modalDebito .modal-content *,
+    #modalDebito .modal-content:hover,
+    #modalDebito .modal-content *:hover,
+    #modalDebito .modal-content:focus,
+    #modalDebito .modal-content *:focus,
+    #modalDebito .modal-content:active,
+    #modalDebito .modal-content *:active {
+        opacity: 1 !important;
+    }
 </style>
 
 <div class="container">
