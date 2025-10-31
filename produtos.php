@@ -83,12 +83,22 @@ include 'includes/header.php';
     <!-- Filtros -->
     <div class="card mb-4">
         <div class="card-body">
-            <form method="get" class="row g-3">
-                <div class="col-md-4">
+            <style>
+                @media (min-width: 992px) {
+                    .filtro-checkboxes {
+                        margin-top: calc(1.5rem + 0.5rem); /* label height + spacing */
+                        min-height: 38px; /* altura do input/select */
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            </style>
+            <form method="get" class="row g-3 align-items-end">
+                <div class="col-12 col-md-6 col-lg-4">
                     <label class="form-label">Buscar</label>
-                    <input type="text" name="busca" class="form-control" value="<?= htmlspecialchars($busca) ?>">
+                    <input type="text" name="busca" class="form-control" value="<?= htmlspecialchars($busca) ?>" placeholder="Buscar produto...">
                 </div>
-                <div class="col-md-4">
+                <div class="col-12 col-md-6 col-lg-3">
                     <label class="form-label">Categoria</label>
                     <select name="categoria_id" class="form-select">
                         <option value="">Todas</option>
@@ -99,16 +109,22 @@ include 'includes/header.php';
                         <?php endforeach; ?>
                     </select>
                 </div>
-                <div class="col-md-4 d-flex align-items-end">
-                    <div class="form-check me-3">
-                        <input type="checkbox" name="apenas_bloqueados" class="form-check-input" id="apenas_bloqueados" <?= $apenas_bloqueados ? 'checked' : '' ?>>
-                        <label class="form-check-label" for="apenas_bloqueados">Apenas bloqueados</label>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="filtro-checkboxes d-flex flex-wrap gap-3">
+                        <div class="form-check mb-0">
+                            <input type="checkbox" name="apenas_bloqueados" class="form-check-input" id="apenas_bloqueados" <?= $apenas_bloqueados ? 'checked' : '' ?>>
+                            <label class="form-check-label" for="apenas_bloqueados">Apenas bloqueados</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input type="checkbox" name="apenas_sem_estoque" class="form-check-input" id="apenas_sem_estoque" <?= $apenas_sem_estoque ? 'checked' : '' ?>>
+                            <label class="form-check-label" for="apenas_sem_estoque">Sem estoque</label>
+                        </div>
                     </div>
-                    <div class="form-check me-3">
-                        <input type="checkbox" name="apenas_sem_estoque" class="form-check-input" id="apenas_sem_estoque" <?= $apenas_sem_estoque ? 'checked' : '' ?>>
-                        <label class="form-check-label" for="apenas_sem_estoque">Sem estoque</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+                <div class="col-12 col-md-6 col-lg-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-funnel-fill me-2"></i>Filtrar
+                    </button>
                 </div>
             </form>
         </div>

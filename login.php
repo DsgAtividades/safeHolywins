@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistema Festa Junina</title>
+    <title>Login - Eventos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -307,7 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="icon-wrapper">
                     <i class="bi bi-emoji-smile"></i>
                 </div>
-                <h1>Sistema Festa Junina</h1>
+                <h1>Eventos</h1>
                 <p>Faça login para continuar</p>
             </div>
 
@@ -350,7 +350,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="login-footer">
-            <p>&copy; <?= date('Y') ?> Sistema Festa Junina - Todos os direitos reservados</p>
+            <p>&copy; <?= date('Y') ?> Eventos - Todos os direitos reservados</p>
         </div>
     </div>
 

@@ -11,7 +11,7 @@ verificarLogin();
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Festa Junina</title>
+    <title>Eventos</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -298,7 +298,7 @@ verificarLogin();
                 
                 <!-- Título sem emoji -->
                 <a class="navbar-brand mb-0 flex-grow-1 text-truncate" href="index.php" style="max-width: 60%;">
-                    Sistema Festa Junina
+                    Eventos
                 </a>
                 
                 <!-- Botão Logout - Canto superior direito -->
